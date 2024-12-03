@@ -1,5 +1,5 @@
 {
-  "name": "myapp",
+  "name": "gmsoft-rn-boilerplate",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -34,7 +34,7 @@
     "typescript": "5.0.4"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "pnpm@9.1.0"
 }
