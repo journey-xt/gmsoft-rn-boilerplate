@@ -1,6 +1,38 @@
-pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
+pluginManagement { 
+    
+    includeBuild("../node_modules/@react-native/gradle-plugin") 
+
+    repositories {
+        maven { url 'http://192.168.2.10:8081/';allowInsecureProtocol true}
+        maven { name "Alibaba"; url "https://maven.aliyun.com/repository/public" }
+        maven { name "Bstek"; url "https://nexus.bsdn.org/content/groups/public/" }
+        google()
+        mavenCentral()
+    }
+
+}
+
+dependencyResolutionManagement {
+
+    // 强制设置 仓库
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    
+    repositories {
+        maven { url 'http://192.168.2.10:8081/';allowInsecureProtocol true}
+        maven { name "Alibaba"; url "https://maven.aliyun.com/repository/public" }
+        maven { name "Bstek"; url "https://nexus.bsdn.org/content/groups/public/" }
+        google()
+        mavenCentral()
+    }
+}
+
+
 plugins { id("com.facebook.react.settings") }
+
 extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+
 rootProject.name = 'gmsoftRnBoilerplate'
+
 include ':app'
+
 includeBuild('../node_modules/@react-native/gradle-plugin')
