@@ -8,17 +8,6 @@ plugins { id("com.facebook.react.settings") }
 
 extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
 
-dependencyResolutionManagement {
-
-    // 强制设置 仓库
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    
-    repositories {
-        maven { url 'http://192.168.2.10:8081/';allowInsecureProtocol true}
-        maven { name "Alibaba"; url "https://maven.aliyun.com/repository/public/" }
-    }
-}
-
 rootProject.name = 'gmsoftRnBoilerplate'
 
 include ':app'
