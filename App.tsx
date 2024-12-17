@@ -15,6 +15,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Alert,
 } from 'react-native';
 
 import {
@@ -62,6 +63,19 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const loginAction = () => {
+    // https://www.cqzcjtest1.gm/gateway/v1/user     https://reactnative.dev/movies.json
+    fetch('https://www.cqzcjtest1.gm/gateway/v1/user')
+      .then(res => {
+        Alert.alert(JSON.stringify(res));
+      })
+      .catch(error => {
+        console.log(error);
+
+        Alert.alert('3333');
+      });
+  };
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -72,6 +86,9 @@ function App(): React.JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+
+        <Text onPress={loginAction}>访问后端接口</Text>
+
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,

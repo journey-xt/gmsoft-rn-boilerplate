@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config>
+        <trust-anchors>
+            <certificates src="@raw/gmsoft_ca"/>
+            <!-- <certificates src="system"/> -->
+        </trust-anchors>
+    </base-config>
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="@raw/gmsoft_ca"/>
+        </trust-anchors>
+    </debug-overrides>
+    <!-- <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">xcjtest1.gm</domain>
+        <domain includeSubdomains="true">xcjdev1.gm</domain>
+        <domain includeSubdomains="true">cqzcjshow.com</domain>
+        <trust-anchors>
+            <certificates src="@raw/gmsoft_ca"/>
+            <certificates src="system"/>
+        </trust-anchors>
+    </domain-config> -->
+</network-security-config>
